@@ -11,7 +11,19 @@ function saveData(e)
     }
     else
     {
+        /*
+        // save data as string in local storage
        localStorage.setItem('Name',name);
        localStorage.setItem('Email',email);
+       */
+
+       //Save data as an object in local storage
+       const myObj={
+        name: name,
+        email: email
+       };
+
+       let myObj_serialized=JSON.stringify(myObj);
+       localStorage.setItem("MyObj",myObj_serialized);
     }
 }
